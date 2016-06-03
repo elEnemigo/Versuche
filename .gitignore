@@ -1,0 +1,4 @@
+# Exclude certain directories
+bin/
+obj/
+html/
