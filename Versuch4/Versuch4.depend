@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1465063937 source:c:\users\the coon\desktop\praktikum info\versuche\versuch4\main.cpp
+	<iostream>
+	"Vektor.h"
+	<cmath>
+
+1465064378 c:\users\the coon\desktop\praktikum info\versuche\versuch4\vektor.h
+	<cmath>
+
+1465053698 source:c:\users\the coon\desktop\praktikum info\versuche\versuch4\vektor.cpp
+	"Vektor.h"
+	<iostream>
+
