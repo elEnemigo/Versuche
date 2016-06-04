@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1460455246 source:c:\users\the coon\desktop\praktikum info\versuche\versuch5teil2\main.cpp
+	<iostream>
+	<string>
+	"List.h"
+	"Student.h"
+
+1465079002 c:\users\the coon\desktop\praktikum info\versuche\versuch5teil2\list.h
+	<iostream>
+	"Student.h"
+	"ListElem.h"
+
+1460454536 c:\users\the coon\desktop\praktikum info\versuche\versuch5teil2\student.h
+	<string>
+
+1465077879 c:\users\the coon\desktop\praktikum info\versuche\versuch5teil2\listelem.h
+	"Student.h"
+
+1465078255 source:c:\users\the coon\desktop\praktikum info\versuche\versuch5teil2\listelem.cpp
+	"ListElem.h"
+
+1465079625 source:c:\users\the coon\desktop\praktikum info\versuche\versuch5teil2\list.cpp
+	"List.h"
+

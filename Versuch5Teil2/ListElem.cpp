@@ -7,7 +7,7 @@
 #include "ListElem.h"
 
 ListElem::ListElem(const Student &pData, ListElem *const pNext):
-    data(pData), next(pNext)
+    data(pData), next(pNext), prev(NULL)
 {
 }
 
@@ -30,6 +30,15 @@ void ListElem::setNext(ListElem *const pNext)
 }
 
 /**
+ * @param pPrevious A pointer to the previous element of data structure.
+ * @return void
+ */
+void ListElem::setPrev(ListElem *const pPrev)
+{
+    prev = pPrev;
+}
+
+/**
  * @return Student
  */
 Student ListElem::getData() const
@@ -43,4 +52,12 @@ Student ListElem::getData() const
 ListElem *ListElem::getNext() const
 {
     return next;
+}
+
+/**
+ * @return ListElem*
+ */
+ListElem *ListElem::getPrev() const
+{
+    return prev;
 }

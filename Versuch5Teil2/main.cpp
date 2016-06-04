@@ -12,6 +12,8 @@
  */
 
 #include <iostream>
+#include <iomanip>
+#include <sstream>
 #include <string>
 #include "List.h"
 #include "Student.h"
@@ -20,6 +22,9 @@ int main()
 {
     List testListe;
     Student stud1;
+    std::string matrikel;
+    std::istringstream *convert;
+    unsigned int matNr = 0;
 
     char abfrage;
     std::cout << "Wollen sie die Liste selbst fuellen? (j)/(n) ";
@@ -50,6 +55,9 @@ int main()
              << "(1): Datenelement vorne ergaenzen" << std::endl
              << "(2): Datenelement abhaengen" << std::endl
              << "(3): Datenbank ausgeben" << std::endl
+             << "(4): Datenbank in umgekehrter Reihenfolge ausgeben" << std::endl
+             << "(5): Datenelement loeschen" << std::endl
+             << "(6): Datenelement hinten ergaenzen" << std::endl
              << "(7): Beenden" << std::endl;
         std::cin >> abfrage;
 
@@ -76,6 +84,36 @@ int main()
             case '3':
                 std::cout << "Inhalt der Liste von vorne nach hinten\n";
                 testListe.print_forwards();
+                break;
+
+            case '4':
+                std::cout << "Inhalt der Liste von hinten nach vorne\n";
+                testListe.print_backwards();
+                break;
+
+            case '5':
+                std::cout << "Bitte geben Sie die Matrikelnummer des zu loeschenden Studenten an: ";
+                std::cin >> matrikel;
+                convert = new std::istringstream(matrikel);
+                *convert >> matNr;
+                std::cout << "Student mit der Matrikelnummer " << matNr;
+                if (testListe.deleteStudent(matNr))
+                    std::cout << " wurde erfolgreich aus der Liste entfernt\n";
+                else
+                    std::cout << " konnte in der Liste nicht gefunden werden\n";
+                break;
+
+            case '6':
+                std::cout << "Bitte geben sie die Daten fuer den Studenten ein.\nName: ";
+                std::cin.ignore(10, '\n'); // Ignoriere das Zeichen '\n', das noch im Puffer ist
+                std::getline(std::cin, stud1.name);  // ganze Zeilen einlesen, inkl Leerzeichen
+                std::cout << "Geburtsdatum: ";
+                std::getline(std::cin, stud1.date_of_birth);
+                std::cout << "Adresse: ";
+                std::getline(std::cin, stud1.adresse);
+                std::cout << "Matrikelnummer: ";
+                std::cin >> stud1.matNr;
+                testListe.enqueue_tail(stud1);
                 break;
 
             case '7':
