@@ -31,7 +31,22 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="List.cpp" />
+		<Unit filename="List.h" />
+		<Unit filename="ListElem.cpp" />
+		<Unit filename="ListElem.h" />
+		<Unit filename="Student.h" />
+		<Unit filename="main.cpp" />
 		<Extensions>
+			<DoxyBlocks>
+				<comment_style block="0" line="0" />
+				<doxyfile_project project_number="1.0" output_directory="docs" />
+				<doxyfile_build />
+				<doxyfile_warnings />
+				<doxyfile_output />
+				<doxyfile_dot />
+				<general use_at_in_tags="1" />
+			</DoxyBlocks>
 			<code_completion />
 			<envvars />
 			<debugger />

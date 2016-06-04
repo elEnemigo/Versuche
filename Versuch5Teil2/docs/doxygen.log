@@ -1,0 +1,3 @@
+C:/Users/The Coon/Desktop/Praktikum Info/Versuche/Versuch5Teil2/ListElem.cpp:33: warning: argument 'pPrevious' of command @param is not found in the argument list of ListElem::setPrev(ListElem *const pPrev)
+C:/Users/The Coon/Desktop/Praktikum Info/Versuche/Versuch5Teil2/ListElem.h:30: warning: The following parameters of ListElem::setPrev(ListElem *const pPrev) are not documented:
+  parameter 'pPrev'
