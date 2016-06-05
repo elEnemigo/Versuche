@@ -93,6 +93,12 @@ bool Student::operator < (const Student& stud)
 		return false;
 }
 
+/**
+ * @brief Streaming operator.
+ * @param out  Stream to output to.
+ * @param student  Instance of class.
+ * @return Returns stream.
+ */
 std::ostream& operator << (std::ostream& out, const Student& student)
 {
     return out << student.firstname << " " << student.name << ", MatNr. " << student.matNr
