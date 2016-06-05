@@ -9,8 +9,7 @@
 
 
 ListElem::ListElem(const Student& firstData, ListElem* const nextElement)
-: data(firstData),
-next(nextElement)
+: data(firstData), next(nextElement)
 {
 
 }
