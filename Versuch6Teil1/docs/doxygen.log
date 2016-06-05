@@ -1,0 +1,2 @@
+C:/Users/The Coon/Desktop/Praktikum Info/Versuche/Versuch6Teil1/src/Student.h:25: warning: The following parameters of Student::Student(const int matriculationnumber, const std::string name, const std::string firstname, const std::string birthday) are not documented:
+  parameter 'birthday'
