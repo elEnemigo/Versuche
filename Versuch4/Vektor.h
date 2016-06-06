@@ -16,7 +16,8 @@
  */
 class Vektor
 {
-   public: //Konstruktor/Destruktor
+   public:
+       //Konstruktor/Destruktor
       Vektor(double x, double y, double z);
       ~Vektor();
 

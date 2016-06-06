@@ -34,16 +34,17 @@ int main()
     std::cout << "\nRotating v1 by 180 deg: "; v1.rotateZ(PI); v1.ausgabe();
 
 
+    // Horizont-Entfernung
     Vektor earth(0.0, 6371.0, 0.0);
-    Vektor person(0.0, 0.0018, 0.0);
-    person = person + earth;
-    Vektor range = earth - person;
+    Vektor mensch(0.0, 0.0018, 0.0);
+    mensch = mensch + earth;
+    Vektor range = earth - mensch;
 
     int iter = 0;
     while (!Vektor::isOrthogonal(&earth, &range))
     {
+        range = earth - mensch;
         earth.rotateZ(0.000001);
-        range = earth - person;
 
         iter++;
         if (iter > 10000000)
@@ -53,15 +54,15 @@ int main()
     std::cout << "Iterations: " << iter << std::endl;
 
     earth = *new Vektor(0.0, 6371.0, 0.0);
-    person = *new Vektor(0.0, 0.5, 0.0);
-    person = person + earth;
-    range = earth - person;
+    mensch = *new Vektor(0.0, 0.5, 0.0);
+    mensch = mensch + earth;
+    range = earth - mensch;
 
     iter = 0;
     while (!Vektor::isOrthogonal(&earth, &range))
     {
+        range = earth - mensch;
         earth.rotateZ(0.00000001);
-        range = earth - person;
 
         iter++;
         if (iter > 10000000)
