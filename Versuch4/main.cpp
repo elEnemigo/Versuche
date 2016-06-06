@@ -12,6 +12,9 @@
 
 #define PI 3.14159265359
 
+/*
+ * @brief Entrypoint
+ */
 int main()
 {
     Vektor v1(8.0, -12.0, 6.0);// = new Vektor(3.0, 12.0, 4.0);
