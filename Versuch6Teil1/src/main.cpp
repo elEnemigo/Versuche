@@ -16,7 +16,7 @@
  */
 int main()
 {
-
+    // Comparing two entries
 	Student stud1(222222, "Lustig", "Peter", "11.04.1995");
 	Student stud2(222222, "Lustig", "Peter", "11.04.1995");
 	std::cout << stud1 << std::endl;
@@ -30,6 +30,7 @@ int main()
 	}
     std::cout << std::endl;
 
+    // Create stack, fill, sort and print it
 	StackSpeicher<7, Student> stackSpeicher;
     Student *student = new Student(34567, "Simoneit", "Harro", "21.11.1991");
     stackSpeicher.push(*student);

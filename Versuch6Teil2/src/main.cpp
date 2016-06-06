@@ -14,31 +14,6 @@
 #include "Student.h"
 
 
-
-/*
-/**
- * @brief Compare function for qsort()
- *
- * @param p1  Pointer to first element of comparison
- * @param p2  Pointer to second element of comparison
- */
-/*
-int compare (const void* p1, const void* p2)
-{
-    Student* s1, *s2;
-
-    s1 = (Student*)p1;
-    s2 = (Student*)p2;
-
-    if (s1 < s2)
-        return -1;
-    else if (s1 == s2)
-        return 0;
-    else
-        return 1;
-}
-*/
-
 /**
  * @brief Entrypoint
  */
@@ -67,7 +42,6 @@ int main()
     studVec.push_back(stud7);
 
     // Sort vector
-    //qsort(studVec.data(), 7, sizeof(Student), compare);
     std::sort(studVec.begin(), studVec.end());
 
     // Print data
