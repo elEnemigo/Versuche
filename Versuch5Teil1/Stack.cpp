@@ -59,7 +59,7 @@ bool Stack::pop(Student& data)
 {
 	if  (head == NULL)
         return false;
-	else if(head == tail)
+	else if (head == tail)
 	{
 	    data = head->getData();
 	    delete head;

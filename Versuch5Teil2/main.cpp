@@ -22,7 +22,7 @@ int main()
 {
     List testListe;
     Student stud1;
-    std::string matrikel;
+    std::string matrikelStr;
     std::istringstream *convert;
     unsigned int matNr = 0;
 
@@ -93,8 +93,8 @@ int main()
 
             case '5':
                 std::cout << "Bitte geben Sie die Matrikelnummer des zu loeschenden Studenten an: ";
-                std::cin >> matrikel;
-                convert = new std::istringstream(matrikel);
+                std::cin >> matrikelStr;
+                convert = new std::istringstream(matrikelStr);
                 *convert >> matNr;
                 std::cout << "Student mit der Matrikelnummer " << matNr;
                 if (testListe.deleteStudent(matNr))

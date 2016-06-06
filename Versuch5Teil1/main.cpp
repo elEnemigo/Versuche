@@ -20,6 +20,9 @@
 #include "Stack.h"
 #include "Student.h"
 
+/*
+ * @brief Entrypoint
+ */
 int main()
 {
     Stack testStack;

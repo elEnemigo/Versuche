@@ -16,8 +16,8 @@
 class Stack
 {
 private:
-	ListElem* head;
-	ListElem* tail;
+	ListElem* head;     ///< Head of stack
+	ListElem* tail;     ///< Tail of stack
 
 public:
     /**

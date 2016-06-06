@@ -15,8 +15,8 @@
 class ListElem
 {
 private:
-	Student data;
-	ListElem* next;
+	Student data;       ///< Actual data of this element
+	ListElem* next;     ///< Next element in the list
 
 public:
     /**
