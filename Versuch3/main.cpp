@@ -322,6 +322,7 @@ void game(const int player_typ[2])
 
 	int current_player = 1;
 
+	// Main game loop
 	while (possible_turns(field, current_player) != 0)
     {
         show_field(field);
@@ -338,6 +339,7 @@ void game(const int player_typ[2])
         current_player = 3 - current_player;
     }
 
+    // Print winner
 	switch (winner(field))
 	{
     case 1:
@@ -350,6 +352,9 @@ void game(const int player_typ[2])
         std::cout << "It is a Tie!" << std::endl;
         break;
 	}
+
+	// Show final field
+	show_field(field);
 }
 
 /**
