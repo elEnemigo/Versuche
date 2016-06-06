@@ -10,7 +10,7 @@
 #include <string>
 #include <iomanip>
 
-int Variablen()
+int main()
 {
 	int iErste=0;
 	int iZweite=0;
@@ -21,7 +21,7 @@ int Variablen()
 	std::cin >> iZweite;
 
 
-	/* Aufgabe 1 */
+	// Aufgabe 1
 	int iSumme = iErste + iZweite;
 	int iQuotient = iErste / iZweite;
 
@@ -30,7 +30,7 @@ int Variablen()
 	std::cout << "Division= " << iQuotient << std::endl;
 
 
-	/* Aufgabe 2 */
+	// Aufgabe 2
 	double dSumme = iErste + iZweite;
 	double dQuotient = iErste / iZweite;
 
@@ -39,7 +39,7 @@ int Variablen()
 	std::cout << "Division= " << dQuotient << std::endl;
 
 
-	/* Aufgabe 3 */
+	// Aufgabe 3
 	double dSummeCast = (double)iErste + (double)iZweite;
 	double dQuotientCast = (double)iErste / (double)iZweite;
 
@@ -47,10 +47,10 @@ int Variablen()
 	std::cout << "Addition = " << dSummeCast << std::endl;
 	std::cout << "Division = " << dQuotientCast << std::endl;
     /* Ohne typecasting zum double werden die Berechnungen im Integer Datentyp
-       ausgeführt, was bei Gewissen Berechnungen zu Präzisionsverlust führt. */
+       ausgeführt, was bei gewissen Berechnungen zu Präzisionsverlust führt. */
 
 
-	/* Aufgabe 4 */
+	// Aufgabe 4
 	std::string sVorname;
 	std::string sNachname;
 
@@ -67,18 +67,18 @@ int Variablen()
 	std::cout << "Last name, first name: " << sNameVorname << std::endl;
 
 
-	/* Aufgabe 5 */
+	// Aufgabe 5
     std::cout << "\nAufgabe 5" << std::endl;
     {
-        /*a*/
+        // a
         int iFeld[2] = {1, 2};
         /* iFeld[0] und iFeld[1] */
 
-        /*b*/
+        // b
         int spielfeld[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
         /* spielfeld[0][0], spielfeld[0][1], spielfeld[0][2], spielfeld[1][0], ...etc */
 
-        /*c*/
+        // c
         std::cout << "c)" << std::endl;
         std::cout << "iFeld: ";
         for(int i = 0; i <= 1; i++)
@@ -95,7 +95,7 @@ int Variablen()
             std::cout << std::endl;
         }
 
-        /*d*/
+        // d
         const int iZweite = 1;
         std::cout << "d)" << std::endl;
         std::cout << "iZweite = " << iZweite << std::endl;
@@ -103,7 +103,7 @@ int Variablen()
     std::cout << "iZweite(ausserhalb des Blockes) = " << iZweite << std::endl;
 
 
-	/* Aufgabe 6 */
+	// Aufgabe 6
 	int iName1 = (int)sVorname.at(0);
 	int iName2 = (int)sVorname.at(1);
 
@@ -112,7 +112,7 @@ int Variablen()
 	std::cout << "iName2 = " << iName2 << std::endl;
 
 
-	/* Aufgabe 7 */
+	// Aufgabe 7
 	int pos1 = 0;
 	int pos2 = 0;
 

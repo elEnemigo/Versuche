@@ -3,7 +3,9 @@
 	<Workspace title="Workspace">
 		<Project filename="Versuch1Teil1/Versuch1Teil1.cbp" />
 		<Project filename="Versuch1Teil2/Versuch1Teil2.cbp" />
-		<Project filename="Versuch2/Versuch2.cbp" />
+		<Project filename="Versuch2Teil1/Versuch2Teil1.cbp" />
+		<Project filename="Versuch2Teil2/Versuch2Teil2.cbp" />
+		<Project filename="Versuch2Teil3/Versuch2Teil3.cbp" />
 		<Project filename="Versuch3/Versuch3.cbp" />
 		<Project filename="Versuch4/Versuch4.cbp" />
 		<Project filename="Versuch5Teil1/Versuch5Teil1.cbp" />

@@ -5,24 +5,26 @@
 
 using namespace std;
 
-// Erste Zeile: Alphabet
-// Zweite Zeile: For encryption
-// Dritte Zeile: For decryption
+/*
+    Erste Zeile: Alphabet
+    Zweite Zeile: For encryption
+    Dritte Zeile: For decryption
+ */
 char lookup[3][26];
 
+// Prototypes
 void Init();
-char Encrypt(char);
-string EncryptString(string);
-char Decrypt(char);
-string DecryptString(string);
+char Encrypt(char);             // Einzelnen char verschluesseln
+string EncryptString(string);   // String verschluesseln
+char Decrypt(char);             // Einzelnen char entschluesseln
+string DecryptString(string);   // String entschluesseln
 
-int Felder()
+
+int main()
 {
     // Aufgabe 2
     Init();
-
-    int i;
-    for(i = 0; i < 26; i++)
+    for(int i = 0; i < 26; i++)
     {
         cout << lookup[0][i] << " | " << lookup[1][i] << " | " << lookup[2][i] << endl;
     }
@@ -75,6 +77,7 @@ void Init()
     //        i--;
     //}
 
+    // Lookup Tabelle generieren
     lookup[0][0] = 'A';
     lookup[0][1] = 'B';
     lookup[0][2] = 'C';
