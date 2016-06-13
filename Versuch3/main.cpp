@@ -276,7 +276,6 @@ bool human_turn(int field[SIZE_Y][SIZE_X], const int player)
 
 	int px;
 	int py;
-	bool repeat=false;
 
 	while (true)
 	{
