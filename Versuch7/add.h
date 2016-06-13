@@ -10,13 +10,18 @@
 #define ADD_H
 
 
+/**
+ * @brief Add class. Inherits from @ref Expression
+ *
+ * This class implements the add operation
+ */
 class Add : public Expression
 {
 private:
-    Expression* leftOp;
-    Expression* rightOp;
+    Expression* leftOp;     //!< Pointer to left expression
+    Expression* rightOp;    //!< Pointer to right expression
 public:
-    Add(Expression* leftOperand, Expression* rightOperand);
+    Add(Expression* leftOperand, Expression* rightOperand);     //!< @brief Constructor @param leftOperand  Left @ref Expression to be used by this operation @param rightOperand  Right @ref Expression to be used by this operation
     virtual ~Add();
     virtual double evaluate() const;
     virtual std::string print() const;

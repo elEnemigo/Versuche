@@ -12,13 +12,16 @@
 #include <string>
 #include <sstream>	//To convert double to string
 
+/**
+ * @brief Expression class. Abstract class
+ */
 class Expression
 {
 public:
-	Expression();
-	virtual ~Expression();
-	virtual double evaluate() const = 0; // calculates and returns the value of expression
-	virtual std::string print() const = 0; // returns the mathematical expression as string
+	Expression();                           //!< Constructor
+	virtual ~Expression();                  //!< Destructor
+	virtual double evaluate() const = 0;    //!< @brief Calculates and returns the value of expression
+	virtual std::string print() const = 0;  //!< @brief Returns the mathematical expression as string
 };
 
 

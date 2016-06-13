@@ -9,18 +9,27 @@
 #include "expression.h"
 #include <iostream>
 
+/**
+ * @brief Tests the Const-Class
+ */
 void testConst()
 {
 	Const c(4);
 	std::cout << c.print() << " = " << c.evaluate() << std::endl;
 }
 
+/**
+ * @brief Tests the Result-Class
+ */
 void testResult()
 {
 	Result res ( new Const(4) );
 	std::cout << res.print() << " = " << res.evaluate() << std::endl;
 }
 
+/**
+ * @brief Tests the Add-Class
+ */
 void testAddConst()
 {
 	Result res (	new Add (
@@ -31,6 +40,9 @@ void testAddConst()
 	std::cout << res.print() << " = " << res.evaluate() << std::endl;
 }
 
+/**
+ * @brief Tests the Mul-Class
+ */
 void testMultConst()
 {
 // TODO: test for multiplication
@@ -42,6 +54,9 @@ void testMultConst()
 	std::cout << res.print() << " = " << res.evaluate() << std::endl;
 }
 
+/**
+ * @brief Tests everything
+ */
 void finalTest()
 {
 	Result res (	new Add (
@@ -64,6 +79,9 @@ void finalTest()
 	std::cout << res.print() << " = " << res.evaluate() << std::endl;
 }
 
+/**
+ * @brief Entrypoint
+ */
 int main(void)
 {
 	// implementieren Sie zuerst die Klassen Const und Result und Testen Sie das Ergebnis.
