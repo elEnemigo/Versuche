@@ -13,8 +13,17 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        streetplanner.cpp
+        streetplanner.cpp \
+    city.cpp \
+    map.cpp \
+    street.cpp
 
-HEADERS  += streetplanner.h
+HEADERS  += streetplanner.h \
+    city.h \
+    map.h \
+    abstractmap.h \
+    street.h
 
 FORMS    += streetplanner.ui
+
+CONFIG += c++11

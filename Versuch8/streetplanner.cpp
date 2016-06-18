@@ -30,3 +30,61 @@ void StreetPlanner::on_pushButton_clicked()
     ypos = qrand() * ui->graphicsView->sceneRect().height() / RAND_MAX;
     scene.addRect(xpos, ypos, 10, 10);
 }
+
+void StreetPlanner::on_pushButton_2_clicked()
+{
+    City A(QString("City A"), -50, 13);
+    City B(QString("City B"), 20, -18);
+
+    A.draw(scene);
+    B.draw(scene);
+}
+
+void StreetPlanner::on_pushButton_3_clicked()
+{
+    Map TestMap;
+
+    City C(QString("City C"), 50, 13);
+    City D(QString("City D"), -20, -18);
+
+    TestMap.addCity(&C);
+    TestMap.addCity(&D);
+
+    TestMap.draw(scene);
+}
+
+void StreetPlanner::on_pushButton_4_clicked()
+{
+    City A(QString("City A"), -50, 13);
+    City B(QString("City B"), 20, -18);
+
+    Street TestStreet(&A, &B);
+
+    TestStreet.draw(scene);
+}
+
+void StreetPlanner::on_pushButton_5_clicked()
+{
+    Map TestMap;
+
+    City A(QString("City A"), -50, 13);
+    City B(QString("City B"), 20, -18);
+    City C(QString("City C"), 50, 13);
+    City D(QString("City D"), -20, -18);
+
+    TestMap.addCity(&C);
+    TestMap.addCity(&D);
+
+    Street TestStreet1(&A, &B);
+    Street TestStreet2(&C, &D);
+
+    if (TestMap.addStreet(&TestStreet1))
+        qDebug() << "ERROR: TestStreet1 was wrongly added to the Map";
+    else
+        qDebug() << "TestStreet1 was handled correctly";
+
+    if (!TestMap.addStreet(&TestStreet2))
+        qDebug() << "ERROR: TestStreet2 was not added to the Map";
+    else
+        qDebug() << "TestStreet2 was handled correctly";
+}
