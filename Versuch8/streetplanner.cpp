@@ -14,6 +14,9 @@ StreetPlanner::StreetPlanner(QWidget *parent) :
     ui->pushButton_3->setVisible(Testing);
     ui->pushButton_4->setVisible(Testing);
     ui->pushButton_5->setVisible(Testing);
+
+    // MapIO
+    mapIO = new MapIoNrw;
 }
 
 StreetPlanner::~StreetPlanner()
@@ -131,4 +134,10 @@ void StreetPlanner::on_pushButton_6_clicked()
         else
             qDebug() << "No new city added!";
     }
+}
+
+void StreetPlanner::on_pushButton_7_clicked()
+{
+    mapIO->fillMap(CityMap);
+    CityMap.draw(scene);
 }
