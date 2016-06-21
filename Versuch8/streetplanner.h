@@ -5,6 +5,7 @@
 #include "map.h"
 #include "street.h"
 #include "dialog.h"
+#include "mapionrw.h"
 
 #include <QMainWindow>
 #include <QtDebug>
@@ -37,10 +38,13 @@ private slots:
 
     void on_pushButton_6_clicked();
 
+    void on_pushButton_7_clicked();
+
 private:
     Ui::StreetPlanner *ui;
     QGraphicsScene scene;
     Map CityMap;
+    MapIo *mapIO;
     bool Testing = false;
 };
 
