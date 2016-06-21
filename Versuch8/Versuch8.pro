@@ -17,17 +17,14 @@ SOURCES += main.cpp\
     city.cpp \
     map.cpp \
     street.cpp \
-    dialog.cpp \
-    mapionrw.cpp
+    dialog.cpp
 
 HEADERS  += streetplanner.h \
     city.h \
     map.h \
     abstractmap.h \
     street.h \
-    dialog.h \
-    mapio.h \
-    mapionrw.h
+    dialog.h
 
 FORMS    += streetplanner.ui \
     dialog.ui
