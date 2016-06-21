@@ -29,6 +29,8 @@ City* Map::find_city(const QString city_name) const
 
 void Map::draw(QGraphicsScene &scene)
 {
+    scene.clear();
+
     for (City* i: CityList)
         i->draw(scene);
 }

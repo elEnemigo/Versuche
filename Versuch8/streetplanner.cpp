@@ -7,6 +7,13 @@ StreetPlanner::StreetPlanner(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->graphicsView->setScene(&scene);
+
+    // Hide testing panel initially
+    ui->pushButton->setVisible(Testing);
+    ui->pushButton_2->setVisible(Testing);
+    ui->pushButton_3->setVisible(Testing);
+    ui->pushButton_4->setVisible(Testing);
+    ui->pushButton_5->setVisible(Testing);
 }
 
 StreetPlanner::~StreetPlanner()
@@ -87,4 +94,41 @@ void StreetPlanner::on_pushButton_5_clicked()
         qDebug() << "ERROR: TestStreet2 was not added to the Map";
     else
         qDebug() << "TestStreet2 was handled correctly";
+}
+
+void StreetPlanner::on_checkBox_clicked()
+{
+    ui->checkBox->isChecked() ? Testing = true : Testing = false;   // Toggle visibility
+
+    ui->pushButton->setVisible(Testing);
+    ui->pushButton_2->setVisible(Testing);
+    ui->pushButton_3->setVisible(Testing);
+    ui->pushButton_4->setVisible(Testing);
+    ui->pushButton_5->setVisible(Testing);
+}
+
+void StreetPlanner::on_pushButton_6_clicked()
+{
+    Dialog Input(CityMap);
+    int RetVal;
+    City *newCity = nullptr;
+
+    // Dialog returns 1 for "OK" and 0 for "Cancel"
+    RetVal = Input.exec();
+    qDebug() << QString("Dialog return value is %1").arg(RetVal);
+
+    if (RetVal)
+    {
+        newCity = Input.ProcessInput();
+
+        if (newCity)
+        {
+            CityMap.addCity(newCity);
+            CityMap.draw(scene);
+
+            qDebug() << QString("%1 created @ (%2:%3)").arg(newCity->getName()).arg(newCity->getX()).arg(newCity->getY());
+        }
+        else
+            qDebug() << "No new city added!";
+    }
 }

@@ -4,6 +4,7 @@
 #include "city.h"
 #include "map.h"
 #include "street.h"
+#include "dialog.h"
 
 #include <QMainWindow>
 #include <QtDebug>
@@ -32,10 +33,15 @@ private slots:
 
     void on_pushButton_5_clicked();
 
+    void on_checkBox_clicked();
+
+    void on_pushButton_6_clicked();
+
 private:
     Ui::StreetPlanner *ui;
     QGraphicsScene scene;
     Map CityMap;
+    bool Testing = false;
 };
 
 #endif // STREETPLANNER_H
