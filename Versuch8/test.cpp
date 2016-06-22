@@ -9,45 +9,105 @@
 // Einlesen der Benutzereingaben und Ausgabe auf der Konsole
 bool StreetPlanner::testSimpleUi()
 {
-    QString pattern = "The user's input: %1";
-    QString s = pattern.arg(ui->lineEdit->text());
-    qDebug() << s;
+    QString strLineEdit(ui->lineEdit->text());
+    int num = strLineEdit.toInt();
+    if (num == 0)
+        qDebug() << QString("Button pressed! Text: %1").arg(strLineEdit);
+    else
+        qDebug() << QString("Button pressed! Number: %1").arg(num + 4);
+
+    return true;
 }
 
 // In der GUI zeichnen
 bool StreetPlanner::testSimpleDrawing()
 {
-    scene.addRect(50, 20, 50, 100);
+    int xpos, ypos;
+    xpos = qrand() * ui->graphicsView->sceneRect().width() / RAND_MAX;
+    ypos = qrand() * ui->graphicsView->sceneRect().height() / RAND_MAX;
+    scene.addRect(xpos, ypos, 10, 10);
+
+    return true;
 }
 
 // Eine Stadt anlegen und zeichnen
 bool StreetPlanner::testDrawCities()
 {
-    City c1("city c1", 20,50);
-    c1.draw(scene);
+    City A(QString("City A"), -50, 13);
+    City B(QString("City B"), 20, -18);
+
+    A.draw(scene);
+    B.draw(scene);
+
+    return true;
 }
 
 // Hinzufügen von Städten zu einer Karte und Zeichnen der Städte über die Karte
 bool StreetPlanner::testDrawMapWithCities()
 {
-    City c1("city c1", 20,50);
-    CityMap.addCity(&c1);
-    CityMap.draw(scene);
+    Map TestMap;
+
+    City C(QString("City C"), 50, 13);
+    City D(QString("City D"), -20, -18);
+
+    TestMap.addCity(&C);
+    TestMap.addCity(&D);
+
+    TestMap.draw(scene);
+
+    return true;
 }
 
 bool StreetPlanner::testDrawStreets()
 {
+    City A(QString("City A"), -50, 13);
+    City B(QString("City B"), 20, -18);
 
+    Street TestStreet(&A, &B);
+
+    TestStreet.draw(scene);
+
+    return true;
 }
 
 bool StreetPlanner::testDrawMapWithStreets()
 {
+    bool ret;
+    Map TestMap;
+    City A(QString("City A"), -50, 13);
+    City B(QString("City B"), 20, -18);
+    City C(QString("City C"), 50, 13);
+    City D(QString("City D"), -20, -18);
 
+    TestMap.addCity(&C);
+    TestMap.addCity(&D);
+
+    Street TestStreet1(&A, &B);
+    Street TestStreet2(&C, &D);
+
+    ret = testRejectStreet(&TestMap, &TestStreet1, false);
+    ret &= testRejectStreet(&TestMap, &TestStreet2, true);
+
+    TestMap.draw(scene);
+
+    return ret;
 }
 
-bool StreetPlanner::testRejectStreet()
+bool StreetPlanner::testRejectStreet(Map *map, Street *street, bool expected)
 {
-
+    if (map->addStreet(street) != expected)
+    {
+        if ( expected == true )
+            qDebug() << "ERROR: The street was not added to the Map";
+        else
+            qDebug() << "ERROR: The street was wrongly added to the Map";
+        return false;
+    }
+    else
+    {
+        qDebug() << "The street was handled correctly";
+        return true;
+    }
 }
 
 // Einen Dialog anzeigen
@@ -185,4 +245,9 @@ bool StreetPlanner::testDijkstra()
     // Draw path in red
     for (Street* i: path)
         i->drawRed(scene);
+
+    if (path.empty())
+        return false;
+    else
+        return true;
 }

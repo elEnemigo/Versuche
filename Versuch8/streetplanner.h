@@ -65,7 +65,7 @@ private:
     bool testDrawMapWithCities();
     bool testDrawStreets();
     bool testDrawMapWithStreets();
-    bool testRejectStreet();
+    bool testRejectStreet(Map *map, Street *street, bool expected);
     // Einen Dialog anzeigen
     bool testShowDialog();
     // Diese Funktion testet, ob die Klasse Map das Interface "AbstractMap" korrekt implementiert.
