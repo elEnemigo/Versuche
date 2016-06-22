@@ -1,5 +1,5 @@
-#ifndef ABSTRACTMAP
-#define ABSTRACTMAP
+#ifndef ABSTRACTMAP_H
+#define ABSTRACTMAP_H
 
 #include "city.h"
 #include "street.h"
@@ -31,7 +31,7 @@ public:
 	 * @param city where you want the street_list from
 	 * @return a list of all streets in this map connected to provided city.
 	 */
-//	virtual StreetList get_street_list(const City* city) const = 0;
+    virtual StreetList get_street_list(const City* city) const = 0;
 
 	/**
 	 * @brief Look for opposite city.
@@ -39,15 +39,15 @@ public:
 	 * @param city
 	 * @return opposite city of the street. If city has no connection to street returns NULL.
 	 */
-//	virtual City * get_opposite_city(const Street* street, const City* city) const = 0;
+    virtual City * get_opposite_city(const Street* street, const City* city) const = 0;
 
 	/**
 	 * @brief Calculate the street length.
 	 * @param street
 	 * @return length of the street
 	 */
-//	virtual double get_length(const Street* street) const = 0;
+    virtual double get_length(const Street* street) const = 0;
 };
 
-#endif // ABSTRACTMAP
+#endif // ABSTRACTMAP_H
 

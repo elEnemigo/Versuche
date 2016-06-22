@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>323</height>
+    <width>564</width>
+    <height>480</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,21 +17,25 @@
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
      <widget class="QWidget" name="gridWidget" native="true">
-      <layout class="QGridLayout" name="gridLayout">
-       <property name="horizontalSpacing">
-        <number>2</number>
-       </property>
-       <property name="verticalSpacing">
+      <layout class="QGridLayout" name="gridLayout" columnstretch="10,0,90">
+       <property name="spacing">
         <number>4</number>
        </property>
-       <item row="3" column="0">
+       <item row="15" column="0">
+        <widget class="QPushButton" name="pushButton_9">
+         <property name="text">
+          <string>Test Dijkstra</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
         <widget class="QPushButton" name="pushButton_6">
          <property name="text">
           <string>Add City</string>
          </property>
         </widget>
        </item>
-       <item row="13" column="0">
+       <item row="16" column="0">
         <spacer name="verticalSpacer">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -44,24 +48,7 @@
          </property>
         </spacer>
        </item>
-       <item row="1" column="2" rowspan="13">
-        <widget class="QGraphicsView" name="graphicsView"/>
-       </item>
-       <item row="9" column="0">
-        <widget class="QPushButton" name="pushButton_3">
-         <property name="text">
-          <string>Test Draw Map</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0" alignment="Qt::AlignLeft|Qt::AlignTop">
-        <widget class="QLineEdit" name="lineEdit">
-         <property name="placeholderText">
-          <string>Stadt</string>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="0">
+       <item row="10" column="0">
         <widget class="QPushButton" name="pushButton_2">
          <property name="text">
           <string>Test Draw City</string>
@@ -71,45 +58,90 @@
          </property>
         </widget>
        </item>
-       <item row="11" column="0">
-        <widget class="QPushButton" name="pushButton_5">
-         <property name="text">
-          <string>Test Street in Map</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="0">
+       <item row="8" column="0">
         <widget class="QCheckBox" name="checkBox">
          <property name="text">
           <string>Toggle Test Buttons</string>
          </property>
         </widget>
        </item>
-       <item row="0" column="0" alignment="Qt::AlignTop">
-        <widget class="QLabel" name="label">
-         <property name="text">
-          <string>Stadt</string>
+       <item row="1" column="0" alignment="Qt::AlignLeft|Qt::AlignTop">
+        <widget class="QLineEdit" name="lineEdit">
+         <property name="placeholderText">
+          <string>Stadt A</string>
          </property>
         </widget>
        </item>
-       <item row="7" column="0">
-        <widget class="QPushButton" name="pushButton">
+       <item row="11" column="0">
+        <widget class="QPushButton" name="pushButton_3">
          <property name="text">
-          <string>Test Slot</string>
+          <string>Test Draw Map</string>
          </property>
         </widget>
        </item>
-       <item row="10" column="0">
+       <item row="13" column="0">
+        <widget class="QPushButton" name="pushButton_5">
+         <property name="text">
+          <string>Test Street in Map</string>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="0">
         <widget class="QPushButton" name="pushButton_4">
          <property name="text">
           <string>Test Draw Street</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="0">
+       <item row="6" column="0">
         <widget class="QPushButton" name="pushButton_7">
          <property name="text">
           <string>Fill Map</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0" alignment="Qt::AlignTop">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Shortest path between A&amp;B</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0">
+        <widget class="QPushButton" name="pushButton">
+         <property name="text">
+          <string>Test Slot</string>
+         </property>
+        </widget>
+       </item>
+       <item row="14" column="0">
+        <widget class="QPushButton" name="pushButton_8">
+         <property name="text">
+          <string>Test Abstract Map</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLineEdit" name="lineEdit_2">
+         <property name="placeholderText">
+          <string>Stadt B</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QPushButton" name="pushButton_10">
+         <property name="text">
+          <string>Find Path</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1" rowspan="16" colspan="2">
+        <widget class="QGraphicsView" name="graphicsView">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
          </property>
         </widget>
        </item>
@@ -123,7 +155,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>400</width>
+     <width>564</width>
      <height>21</height>
     </rect>
    </property>

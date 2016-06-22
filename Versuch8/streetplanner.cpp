@@ -14,6 +14,8 @@ StreetPlanner::StreetPlanner(QWidget *parent) :
     ui->pushButton_3->setVisible(Testing);
     ui->pushButton_4->setVisible(Testing);
     ui->pushButton_5->setVisible(Testing);
+    ui->pushButton_8->setVisible(Testing);
+    ui->pushButton_9->setVisible(Testing);
 
     // MapIO
     mapIO = new MapIoNrw;
@@ -108,6 +110,8 @@ void StreetPlanner::on_checkBox_clicked()
     ui->pushButton_3->setVisible(Testing);
     ui->pushButton_4->setVisible(Testing);
     ui->pushButton_5->setVisible(Testing);
+    ui->pushButton_8->setVisible(Testing);
+    ui->pushButton_9->setVisible(Testing);
 }
 
 void StreetPlanner::on_pushButton_6_clicked()
@@ -140,4 +144,30 @@ void StreetPlanner::on_pushButton_7_clicked()
 {
     mapIO->fillMap(CityMap);
     CityMap.draw(scene);
+}
+
+void StreetPlanner::on_pushButton_8_clicked()
+{
+    if (testAbstractMap())
+        qDebug() << "Passed abstract map test!";
+    else
+        qDebug() << "Failed abstract map test!";
+}
+
+void StreetPlanner::on_pushButton_9_clicked()
+{
+    testDijkstra();
+}
+
+void StreetPlanner::on_pushButton_10_clicked()
+{
+    // Redraw map
+    CityMap.draw(scene);
+
+    // Search
+    Map::StreetList path = Dijkstra::search(CityMap, ui->lineEdit->text(), ui->lineEdit_2->text());
+
+    // Draw path in red
+    for (Street* i: path)
+        i->drawRed(scene);
 }

@@ -7,7 +7,7 @@
 #include <QPainter>
 #include <QGraphicsTextItem>
 
-#define CITYSIZE 10
+#define CITYSIZE 10 // Draw size for city
 
 class City
 {

@@ -1,11 +1,13 @@
 #ifndef STREETPLANNER_H
 #define STREETPLANNER_H
 
+
 #include "city.h"
 #include "map.h"
 #include "street.h"
 #include "dialog.h"
 #include "mapionrw.h"
+#include "dijkstra.h"
 
 #include <QMainWindow>
 #include <QtDebug>
@@ -40,12 +42,36 @@ private slots:
 
     void on_pushButton_7_clicked();
 
+    void on_pushButton_8_clicked();
+
+    void on_pushButton_9_clicked();
+
+    void on_pushButton_10_clicked();
+
 private:
     Ui::StreetPlanner *ui;
     QGraphicsScene scene;
     Map CityMap;
     MapIo *mapIO;
     bool Testing = false;
+
+    // Einlesen der Benutzereingaben und Ausgabe auf der Konsole
+    bool testSimpleUi();
+    // In der GUI zeichnen
+    bool testSimpleDrawing();
+    // Eine Stadt anlegen und zeichnen
+    bool testDrawCities();
+    // Hinzufügen von Städten zu einer Karte und Zeichnen der Städte über die Karte
+    bool testDrawMapWithCities();
+    bool testDrawStreets();
+    bool testDrawMapWithStreets();
+    bool testRejectStreet();
+    // Einen Dialog anzeigen
+    bool testShowDialog();
+    // Diese Funktion testet, ob die Klasse Map das Interface "AbstractMap" korrekt implementiert.
+    bool testAbstractMap();
+    // Dijkstra algorithmus testen
+    bool testDijkstra();
 };
 
 #endif // STREETPLANNER_H

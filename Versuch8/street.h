@@ -16,6 +16,7 @@ public:
     City* getA() const;
     City* getB() const;
     void draw(QGraphicsScene& scene);
+    void drawRed(QGraphicsScene& scene);
 };
 
 #endif // STREET_H

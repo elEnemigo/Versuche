@@ -18,7 +18,9 @@ SOURCES += main.cpp\
     map.cpp \
     street.cpp \
     dialog.cpp \
-    mapionrw.cpp
+    mapionrw.cpp \
+    test.cpp \
+    dijkstra.cpp
 
 HEADERS  += streetplanner.h \
     city.h \
@@ -27,7 +29,8 @@ HEADERS  += streetplanner.h \
     street.h \
     dialog.h \
     mapio.h \
-    mapionrw.h
+    mapionrw.h \
+    dijkstra.h
 
 FORMS    += streetplanner.ui \
     dialog.ui
