@@ -70,3 +70,8 @@ void Map::draw(QGraphicsScene &scene)
     for (Street* i: Streets)
         i->draw(scene);
 }
+
+Map::CityList Map::get_city_list() const
+{
+    return Cities;
+}

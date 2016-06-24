@@ -21,7 +21,9 @@ public:
     StreetList get_street_list(const City* city) const;
     City * get_opposite_city(const Street* street, const City* city) const;
     double get_length(const Street* street) const;
+
     void draw(QGraphicsScene &scene);
+    CityList get_city_list() const;
 };
 
 #endif // MAP_H

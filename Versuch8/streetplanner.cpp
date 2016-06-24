@@ -61,27 +61,53 @@ void StreetPlanner::on_pushButton_6_clicked()
             CityMap.draw(scene);
 
             qDebug() << QString("%1 created @ (%2:%3)").arg(newCity->getName()).arg(newCity->getX()).arg(newCity->getY());
+
+            // Update combo box
+            ui->comboBox->addItem(newCity->getName());
+            ui->comboBox_2->addItem(newCity->getName());
         }
         else
-            qDebug() << "No new city added!";
+        {
+            qDebug() << "No new city added! Try again";
+            on_pushButton_6_clicked();
+        }
     }
 }
 
 // Button: Fill Map
 void StreetPlanner::on_pushButton_7_clicked()
 {
+    // Fill map
     mapIO->fillMap(CityMap);
+
+    // Draw map
     CityMap.draw(scene);
+
+    // Update combo box
+    for (City * i: CityMap.get_city_list())
+    {
+        ui->comboBox->addItem(i->getName());
+        ui->comboBox_2->addItem(i->getName());
+    }
 }
 
 // Button: Find Path
 void StreetPlanner::on_pushButton_10_clicked()
 {
+    QString cityA = ui->lineEdit->text();
+    QString cityB = ui->lineEdit_2->text();
+
+    // If lineEdits empty -> get value from combobox
+    if (ui->lineEdit->text().isEmpty())
+        cityA = ui->comboBox->currentText();
+    if (ui->lineEdit_2->text().isEmpty())
+        cityB = ui->comboBox_2->currentText();
+
     // Redraw map
     CityMap.draw(scene);
 
     // Search
-    Map::StreetList path = Dijkstra::search(CityMap, ui->lineEdit->text(), ui->lineEdit_2->text());
+    Map::StreetList path = Dijkstra::search(CityMap, cityA, cityB);
 
     // Draw path in red
     for (Street* i: path)
