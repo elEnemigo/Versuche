@@ -77,6 +77,22 @@ void StreetPlanner::on_pushButton_6_clicked()
 // Button: Fill Map
 void StreetPlanner::on_pushButton_7_clicked()
 {
+    // Let user choose map to import
+    QString cityFile, streetFile;
+    QFileDialog selectCity;
+    selectCity.setWindowTitle("Select cities file");
+    if (selectCity.exec())
+    {
+        cityFile = selectCity.selectedFiles().at(0);
+        selectCity.setWindowTitle("Select streets file");
+        if (selectCity.exec())
+        {
+            streetFile = selectCity.selectedFiles().at(0);
+            mapIO = new MapIoFileinput(cityFile, streetFile);
+            qDebug() << cityFile << "\n" << streetFile;
+        }
+    }
+
     // Fill map
     mapIO->fillMap(CityMap);
 

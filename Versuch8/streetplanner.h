@@ -7,11 +7,13 @@
 #include "street.h"
 #include "dialog.h"
 #include "mapionrw.h"
+#include "mapiofileinput.h"
 #include "dijkstra.h"
 
 #include <QMainWindow>
 #include <QtDebug>
 #include <QGraphicsScene>
+#include <QFileDialog>
 
 namespace Ui {
 class StreetPlanner;
