@@ -84,6 +84,8 @@ void StreetPlanner::on_pushButton_7_clicked()
     CityMap.draw(scene);
 
     // Update combo box
+    ui->comboBox->clear();
+    ui->comboBox_2->clear();
     for (City * i: CityMap.get_city_list())
     {
         ui->comboBox->addItem(i->getName());
