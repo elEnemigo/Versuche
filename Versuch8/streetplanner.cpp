@@ -57,7 +57,11 @@ void StreetPlanner::on_pushButton_6_clicked()
 
         if (newCity)
         {
-            CityMap.addCity(newCity);
+            if (!CityMap.addCity(newCity))
+            {
+                qDebug() << "City already exists!";
+                on_pushButton_6_clicked();
+            }
             CityMap.draw(scene);
 
             qDebug() << QString("%1 created @ (%2:%3)").arg(newCity->getName()).arg(newCity->getX()).arg(newCity->getY());
