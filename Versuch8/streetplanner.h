@@ -19,6 +19,9 @@ namespace Ui {
 class StreetPlanner;
 }
 
+/**
+ * @brief Main class. Inheriting from QMainWindow
+ */
 class StreetPlanner : public QMainWindow
 {
     Q_OBJECT
@@ -28,35 +31,69 @@ public:
     ~StreetPlanner();
 
 private slots:
+    /**
+     * @brief Test Slot button
+     */
     void on_pushButton_clicked();
 
+    /**
+     * @brief Test Draw City button
+     */
     void on_pushButton_2_clicked();
 
+    /**
+     * @brief Test Draw Map button
+     */
     void on_pushButton_3_clicked();
 
+    /**
+     * @brief Test Draw Street button
+     */
     void on_pushButton_4_clicked();
 
+    /**
+     * @brief Test Street in Map button
+     */
     void on_pushButton_5_clicked();
 
+    /**
+     * @brief Checkbox toggling test button visibility
+     */
     void on_checkBox_clicked();
 
+    /**
+     * @brief Add City button
+     */
     void on_pushButton_6_clicked();
 
+    /**
+     * @brief Fill Map button
+     */
     void on_pushButton_7_clicked();
 
+    /**
+     * @brief Test Abstract Map button
+     */
     void on_pushButton_8_clicked();
 
+    /**
+     * @brief Test Dijkstra button
+     */
     void on_pushButton_9_clicked();
 
+    /**
+     * @brief Find Path button
+     */
     void on_pushButton_10_clicked();
 
 private:
-    Ui::StreetPlanner *ui;
-    QGraphicsScene scene;
-    Map CityMap;
-    MapIo *mapIO;
-    bool Testing = false;
+    Ui::StreetPlanner *ui;      //! Reference to this class
+    QGraphicsScene scene;       //! Main scene to draw to
+    Map CityMap;                //! Main map
+    MapIo *mapIO;               //! For loading maps
+    bool Testing = false;       //! Visibility of test buttons
 
+    // -------------------------------- TEST FUNCTIONS -----------------------------------
     // Einlesen der Benutzereingaben und Ausgabe auf der Konsole
     bool testSimpleUi();
     // In der GUI zeichnen

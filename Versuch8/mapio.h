@@ -7,7 +7,9 @@
 class MapIo
 {
 public:
-	/// this method adds Cities and Streets to the provided Map.
+    /**
+     * @brief This method adds Cities and Streets to the provided Map.
+     */
 	virtual void fillMap(AbstractMap &map) = 0;
 };
 

@@ -6,10 +6,16 @@ Map::Map()
 
 }
 
-void Map::addCity(City* NewCity)
+bool Map::addCity(City* NewCity)
 {
-    Cities.push_back(NewCity);
-    qDebug() << NewCity->getName();
+    if (!find_city(NewCity->getName()))
+    {
+        Cities.push_back(NewCity);
+        qDebug() << NewCity->getName();
+        return true;
+    }
+
+    return false;
 }
 
 bool Map::addStreet(Street* NewStreet)
@@ -60,7 +66,7 @@ double Map::get_length(const Street* street) const
     return sqrt(xDff*xDff + yDff*yDff);
 }
 
-void Map::draw(QGraphicsScene &scene)
+void Map::draw(QGraphicsScene &scene) const
 {
     scene.clear();
 

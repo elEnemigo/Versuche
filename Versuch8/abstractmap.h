@@ -4,24 +4,39 @@
 #include "city.h"
 #include "street.h"
 
+/**
+ * @brief AbstractMap class. Abstract class
+ */
 class AbstractMap {
 public:
 	typedef std::vector<City *> CityList;
 	typedef std::vector<Street *> StreetList;
 
-	/// Adds the provided city to this map.
-	virtual void addCity(City *) = 0;
+    /**
+    * @brief Add city to map
+    *
+    *  Adds the provided city to this map. If a city with the same name has
+    *  been added before, the city is not added.
+    *
+    * @param City Pointer to @ref City to add
+    * @return Return true if the city has beed added.
+    */
+    virtual bool addCity(City *) = 0;
 
-	/** Adds the provided street to this map. If the cities linked by the street
+    /**
+     * @brief Add street to map
+     *
+     *  Adds the provided street to this map. If the cities linked by the street
 	 *  have not been added to this map before, the street is not added.
 	 *
-	 * Return true if the street has beed added.
+     * @param Street  Pointer to @ref Street to add
+     * @return Return true if the street has beed added.
 	 */
     virtual bool addStreet(Street *) = 0;
 
 	/**
 	 * @brief Search for a city in this map by given name.
-	 * @param name
+	 * @param city_name  Name to search
 	 * @return the city pointer, if city not found NULL
 	 */
     virtual City* find_city(const QString city_name) const = 0;
@@ -47,6 +62,12 @@ public:
 	 * @return length of the street
 	 */
     virtual double get_length(const Street* street) const = 0;
+
+    /**
+     * @brief Draw the map.
+     * @param scene  Scene to draw to
+     */
+    virtual void draw(QGraphicsScene &scene) const = 0;
 };
 
 #endif // ABSTRACTMAP_H

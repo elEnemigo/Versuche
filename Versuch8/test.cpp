@@ -233,6 +233,7 @@ bool StreetPlanner::testAbstractMap()
     return passed;
 }
 
+// Diese Funktion testet unsere Implementation des Disjkstra Algorithmus
 bool StreetPlanner::testDijkstra()
 {
     // Fill map with dummy
