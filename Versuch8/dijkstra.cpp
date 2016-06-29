@@ -25,6 +25,14 @@ AbstractMap::StreetList Dijkstra::search(const AbstractMap &map, QString start, 
 		AbstractMap::StreetList l;
 		return l;
 	}
+    if (start_pointer == target_pointer)
+    {
+        qDebug() << "Dijkstra: Start and taget the same";
+
+        // return an emply list
+        AbstractMap::StreetList l;
+        return l;
+    }
 
 	// Defining Sets
 	std::vector<tuppel> green;
