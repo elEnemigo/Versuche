@@ -28,5 +28,5 @@ double Div::evaluate() const
 
 std::string Div::print() const
 {
-    return "(" + leftOp->print() + " / " + rightOp->print() + ")";
+    return leftOp->print() + " : " + rightOp->print();
 }

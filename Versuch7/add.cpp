@@ -28,5 +28,5 @@ double Add::evaluate() const
 
 std::string Add::print() const
 {
-    return leftOp->print() + " + " + rightOp->print();
+    return "(" + leftOp->print() + " + " + rightOp->print() + ")";
 }

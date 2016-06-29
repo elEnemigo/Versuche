@@ -11,26 +11,39 @@
 
 /**
  * @brief Tests the Const-Class
+ * @return  True when test succeeded. Otherwise false.
  */
-void testConst()
+bool testConst()
 {
 	Const c(4);
 	std::cout << c.print() << " = " << c.evaluate() << std::endl;
+
+	if (c.evaluate() == 4)
+		return true;
+	else
+		return false;
 }
 
 /**
  * @brief Tests the Result-Class
+ * @return  True when test succeeded. Otherwise false.
  */
-void testResult()
+bool testResult()
 {
 	Result res ( new Const(4) );
 	std::cout << res.print() << " = " << res.evaluate() << std::endl;
+
+	if (res.evaluate() == 4)
+		return true;
+	else
+		return false;
 }
 
 /**
  * @brief Tests the Add-Class
+ * @return  True when test succeeded. Otherwise false.
  */
-void testAddConst()
+bool testAddConst()
 {
 	Result res (	new Add (
 					new Const(7),
@@ -38,12 +51,18 @@ void testAddConst()
 				)
 			);
 	std::cout << res.print() << " = " << res.evaluate() << std::endl;
+
+	if (res.evaluate() == 7 + 8)
+		return true;
+	else
+		return false;
 }
 
 /**
  * @brief Tests the Mul-Class
+ * @return  True when test succeeded. Otherwise false.
  */
-void testMultConst()
+bool testMultConst()
 {
 // TODO: test for multiplication
     Result res (	new Mul (
@@ -52,12 +71,18 @@ void testMultConst()
 				)
 			);
 	std::cout << res.print() << " = " << res.evaluate() << std::endl;
+
+	if (res.evaluate() == 7 * 8)
+		return true;
+	else
+		return false;
 }
 
 /**
  * @brief Tests everything
+ * @return  True when test succeeded. Otherwise false.
  */
-void finalTest()
+bool finalTest()
 {
 	Result res (	new Add (
                         new Add (
@@ -67,7 +92,7 @@ void finalTest()
                                 new Const(5)
                                 )
                             ),
-                       new Div (
+						new Div (
                                 new Sub (
                                          new Const(38),
                                          new Const(7)
@@ -77,6 +102,11 @@ void finalTest()
                     )
                 );
 	std::cout << res.print() << " = " << res.evaluate() << std::endl;
+
+	if (res.evaluate() == 4.0 + 9.0 * 5.0 + ((38.0 - 7.0) / 4.0))
+		return true;
+	else
+		return false;
 }
 
 /**
@@ -85,14 +115,34 @@ void finalTest()
 int main(void)
 {
 	// implementieren Sie zuerst die Klassen Const und Result und Testen Sie das Ergebnis.
-	testConst();
-	testResult();
+	if (!testConst())
+	{
+		std::cout << "Const test failed!" << std::endl;
+		return 0;
+	}
+	if (!testResult())
+	{
+		std::cout << "Result test failed!" << std::endl;
+		return 0;
+	}
 
 	// Ergänzen Sie ihr Programm nach und nach um weitere Rechenoperationen
-	testMultConst();
-	testAddConst();
+	if (!testMultConst())
+	{
+		std::cout << "Mul test failed!" << std::endl;
+		return 0;
+	}
+	if (!testAddConst())
+	{
+		std::cout << "Add test failed!" << std::endl;
+		return 0;
+	}
 	std::cout << "Final Test: " << std::endl;
-	finalTest();
+	if (!finalTest())
+	{
+		std::cout << "Last test failed!" << std::endl;
+		return 0;
+	}
 
 	return 0;
 }
