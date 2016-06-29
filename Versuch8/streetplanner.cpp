@@ -136,6 +136,21 @@ void StreetPlanner::on_pushButton_10_clicked()
         i->drawRed(scene);
 }
 
+// Button: Add Street
+void StreetPlanner::on_pushButton_11_clicked()
+{
+    NewStreetDialog Input(&CityMap);
+    int RetVal;
+
+    // Dialog returns 1 for "OK" and 0 for "Cancel"
+    RetVal = Input.exec();
+    qDebug() << QString("Dialog return value is %1").arg(RetVal);
+
+    if (RetVal)
+    {
+        CityMap.draw(scene);
+    }
+}
 
 /* --------------------------------------- TEST BUTTONS ------------------------------------------ */
 

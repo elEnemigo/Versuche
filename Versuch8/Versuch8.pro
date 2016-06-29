@@ -21,7 +21,8 @@ SOURCES += main.cpp\
     mapionrw.cpp \
     test.cpp \
     dijkstra.cpp \
-    mapiofileinput.cpp
+    mapiofileinput.cpp \
+    newstreetdialog.cpp
 
 HEADERS  += streetplanner.h \
     city.h \
@@ -32,9 +33,11 @@ HEADERS  += streetplanner.h \
     mapio.h \
     mapionrw.h \
     dijkstra.h \
-    mapiofileinput.h
+    mapiofileinput.h \
+    newstreetdialog.h
 
 FORMS    += streetplanner.ui \
-    dialog.ui
+    dialog.ui \
+    newstreetdialog.ui
 
 CONFIG += c++11

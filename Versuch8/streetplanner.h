@@ -6,6 +6,7 @@
 #include "map.h"
 #include "street.h"
 #include "dialog.h"
+#include "newstreetdialog.h"
 #include "mapionrw.h"
 #include "mapiofileinput.h"
 #include "dijkstra.h"
@@ -85,6 +86,11 @@ private slots:
      * @brief Find Path button
      */
     void on_pushButton_10_clicked();
+
+    /**
+     * @brief Add Street button
+     */
+    void on_pushButton_11_clicked();
 
 private:
     Ui::StreetPlanner *ui;      //! Reference to this class
